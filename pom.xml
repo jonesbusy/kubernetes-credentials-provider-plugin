@@ -133,6 +133,63 @@
         <version>2.7.1</version>
       </dependency>
       <dependency>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>atlassian-bitbucket-server-integration</artifactId>
+        <version>2.1.3</version>
+        <exclusions>
+          <!-- fails maven enforcer because kubernetes-client has a different version of jackson -->
+          <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+          </exclusion>
+          <!-- fails maven enforcer because aws-credentials has a different version of some plugin -->
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>credentials</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>plain-credentials</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>structs</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-job</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-cps</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-step-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkinsci.plugins</groupId>
+            <artifactId>pipeline-model-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkinsci.plugins</groupId>
+            <artifactId>pipeline-model-extensions</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>scm-api</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
         <version>2.2</version>
@@ -208,12 +265,18 @@
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>variant</artifactId>
     </dependency>
-      <!-- GitHub App credentials -->
+    <!-- GitHub App credentials -->
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>github-branch-source</artifactId>
       <optional>true</optional>
-    </dependency>    
+    </dependency>
+    <!-- Bitbucket server personal token credentials -->
+    <dependency>
+      <groupId>io.jenkins.plugins</groupId>
+      <artifactId>atlassian-bitbucket-server-integration</artifactId>
+      <optional>true</optional>
+    </dependency>
     <!-- test deps -->
     <dependency>
       <groupId>junit</groupId>

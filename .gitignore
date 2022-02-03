@@ -1,6 +1,9 @@
 target
 work
 
+# VS code projet files 
+.vscode
+
 # IntelliJ project files 
 *.iml
 *.ipr
