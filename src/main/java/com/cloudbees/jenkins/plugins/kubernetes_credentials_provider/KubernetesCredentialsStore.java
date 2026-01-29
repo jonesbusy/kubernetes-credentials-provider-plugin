@@ -124,22 +124,6 @@ public class KubernetesCredentialsStore extends CredentialsStore {
 
         private KubernetesCredentialsStoreAction(KubernetesCredentialsStore store) {
             this.store = store;
-            addIcons();
-        }
-
-        private void addIcons() {
-            IconSet.icons.addIcon(new Icon("icon-credentials-kubernetes-store icon-sm",
-                "kubernetes-credentials-provider/images/16x16/kubernetes-store.png",
-                Icon.ICON_SMALL_STYLE, IconType.PLUGIN));
-            IconSet.icons.addIcon(new Icon("icon-credentials-kubernetes-store icon-md",
-                "kubernetes-credentials-provider/images/24x24/kubernetes-store.png",
-                Icon.ICON_MEDIUM_STYLE, IconType.PLUGIN));
-            IconSet.icons.addIcon(new Icon("icon-credentials-kubernetes-store icon-lg",
-                "kubernetes-credentials-provider/images/32x32/kubernetes-store.png",
-                Icon.ICON_LARGE_STYLE, IconType.PLUGIN));
-            IconSet.icons.addIcon(new Icon("icon-credentials-kubernetes-store icon-xlg",
-                "kubernetes-credentials-provider/images/48x48/kubernetes-store.png",
-                Icon.ICON_XLARGE_STYLE, IconType.PLUGIN));
         }
 
         @Override
@@ -149,16 +133,9 @@ public class KubernetesCredentialsStore extends CredentialsStore {
         }
 
         @Override
-        public String getIconFileName() {
-            return isVisible()
-               ? "/plugin/kubernetes-credentials-provider/images/32x32/kubernetes-store.png"
-               : null;
-        }
-
-        @Override
         public String getIconClassName() {
             return isVisible()
-               ? "icon-credentials-kubernetes-store"
+               ? "symbol-kubernetes plugin-kubernetes-credentials-provider"
                : null;
         }
 
