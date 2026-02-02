@@ -348,6 +348,6 @@ public class KubernetesCredentialProvider extends CredentialsProvider implements
 
     @Override
     public String getIconClassName() {
-        return "icon-credentials-kubernetes-store";
+        return "symbol-kubernetes plugin-kubernetes-credentials-provider";
     }
 }
